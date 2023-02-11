@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100;1,200&family=Orbitron:wght@500&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+}
+body {
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.link {
+    display: block;
+    font-size: clamp(2em, 6vw, 7em);
+    text-decoration: none;
+    color: white;
+    border-top: 2px solid gray;
+    padding: clamp(0.25em, 1vw, 1em) clamp(1em, 4vw, 4em);
+    position: relative;
+    
+}
+
+.link:last-of-type {
+    border-bottom: 2px solid gray;
+}
+
+.link::before{
+    content: "";
+    position: absolute; 
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, transparent 5%, rgb(34, 115, 255) 80%, rgb(0, 149, 255));
+    
+}
+
+.link:hover::before {
+    width: 100%;
+    transition: width 0.5s ease-in;
+}
+
+.box {
+    /* width: 200px; */
+    height: 200px;
+    background-color: black;
+    margin-top: 50px;
+    position: relative;
+}
+
+.box::before {
+    content: '';
+    background: linear-gradient(to right, transparent 5%, red 70%, rgb(250, 84, 24));
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box:hover::before {
+    width: 100%;
+    transition: 0.6s ease-in;
+}
+
+.box::after {
+    content: '';
+    background: linear-gradient(to left, blue 5%, green 70%, rgb(250, 84, 24));
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.box:hover::after {
+    width: 100%;
+    transition: 1s ease-out;
+    transition-delay: 0.6s;
+}
